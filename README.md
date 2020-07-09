@@ -14,6 +14,20 @@ Tools for KSP
 
 Provides a series of tools to help on KSP modding and development.
 
+Current tools:
+
+* lint v 0.1
+
+### lint
+
+Reads every `.cfg` file found on the directory specified, printing any detected error on the process.
+
+Example:
+
+```
+./lint.py ~/Workspaces/KSP/runtime/1.10/GameData --verbose --author Squad --addon-title KSP --addon-version 1.10
+```
+
 ## Installation
 
 1. Checkout the thing.
