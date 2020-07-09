@@ -10,6 +10,10 @@ Tools for KSP
 	+ [Source and Binaries](https://github.com/net-lisias-ksp/ksp-tools-public) on GitHub.
 
 
+## Description
+
+Provides a series of tools to help on KSP modding and development.
+
 ## Installation
 
 1. Checkout the thing.
