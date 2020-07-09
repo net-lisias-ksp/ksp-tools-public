@@ -39,14 +39,21 @@ DEBUG = 1
 TESTRUN = 0
 PROFILE = 0
 
+
+__total = 0
+__errcount = 0
+
 def do_a_file(opts, file):
+	global __total, __errcount
 	if not file.endswith(".cfg"): return None
 	try:
 		node = ConfigNode.load_file(file)
 		if opts.verbose > 0: print(file)
+		__total += 1
 		return node
 	except Exception as e:
-		print(e)
+		__errcount += 1
+		print(e, file=sys.stderr)
 
 
 def do_a_dir(opts, current_dir:str) -> list:
@@ -69,6 +76,7 @@ def do_it(opts, args):
 def main(argv=None):
 	'''Command line options.'''
 
+	global __total, __errcount
 	program_name = os.path.basename(sys.argv[0])
 	program_version = "v0.1"
 	program_build_date = "%s" % __updated__
@@ -112,7 +120,8 @@ def main(argv=None):
 			args[0] = os.path.abspath(os.path.expanduser(args[0]))
 
 		do_it(opts, args)
-		return 0
+		print("{0} files, {1} with errors.".format(__total, __errcount))
+		return 0 if 0 == __errcount else -1
 
 	except Exception as e:
 		indent = len(program_name) * " "
