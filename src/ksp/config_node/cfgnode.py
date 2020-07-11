@@ -161,24 +161,18 @@ class ConfigNode:
 			self.__values[key] = value
 
 	def to_string(self, level = 0):
-		extra = 0
+		text=list()
 		if level >= 0:
-			extra = 2
-		text=[None] * (len(self.__values) + len(self.__nodes) + extra)
-		index = 0
-		if level >= 0:
-			text[index] = "{\n"
-			index += 1
+			text.append("{\n")
 		for val in self.__values.items():
-			text[index] = "%s%s = %s\n" % ("    " * (level + 1), val[0], val[1])
-			index += 1
+			text.append("%s%s = %s\n" % ("    " * (level + 1), val[0], val[1]))
 		for node in self.__nodes.items():
-			ntext = node[1].to_string(level + 1)
-			text[index] = "%s%s %s\n" % ("    " * (level + 1), node[0], ntext)
-			index += 1
+			l = node[1] if list == type(node[1]) else [node[1]]
+			for i in l:
+				ntext = i.to_string(level + 1)
+				text.append("%s%s %s\n" % ("    " * (level + 1), node[0], ntext))
 		if level >= 0:
-			text[index] = "%s}\n" % ("    " * (level))
-			index += 1
+			text.append("%s}\n" % ("    " * (level)))
 		return "".join(text)
 
 	def __repr__(self):
