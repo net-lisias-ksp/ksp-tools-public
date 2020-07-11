@@ -32,7 +32,6 @@ class ConfigNode:
 
 	__CONVERTERS['PART'] = dict()
 	#__CONVERTERS['PART']['name'] = lambda v : v.replace("_",".") if str == type(v) else v
-
 	__CONVERTERS['PART']['cost'] = lambda v : float(v) if str == type(v) else v
 	__CONVERTERS['PART']['entryCost'] = lambda v : float(v) if str == type(v) else v
 	__CONVERTERS['PART']['mass'] = lambda v : float(v) if str == type(v) else v
@@ -42,9 +41,7 @@ class ConfigNode:
 	__CONVERTERS['PART']['crashTolerance'] = lambda v : float(v) if str == type(v) else v
 	__CONVERTERS['PART']['maxTemp'] = lambda v : float(v) if str == type(v) else v
 	__CONVERTERS['PART']['PhysicsSignificance'] = lambda v : 0 != int(v) if str == type(v) else v
-
 	__CONVERTERS['PART']['scale'] = lambda v : [float(vv.strip()) for vv in v.split(",")] if str == type(v) else v
-
 	__CONVERTERS['PART']['bulkheadProfiles'] = lambda v : [vv.strip() for vv in v.split(",")] if str == type(v) else v
 	__CONVERTERS['PART']['TechRequired'] = lambda v : [vv.strip() for vv in v.split(",")] if str == type(v) else v
 	__CONVERTERS['PART']['tags'] = lambda v : [vv.strip() for vv in v.split(",")] if str == type(v) else v
@@ -81,7 +78,7 @@ class ConfigNode:
 				elif parser.token == '{':
 					new_node = ConfigNode(key)
 					ConfigNode.__parse(new_node, parser, False, localization)
-					node.__nodes[key] = new_node
+					node.add_node(key, new_node)
 					break
 				else:
 					#cfg_error(parser, "unexpected " + parser.token)
@@ -124,10 +121,21 @@ class ConfigNode:
 		return key in self.__nodes
 
 	def get_node(self, key):
-		for n in self.__nodes.items():
-			if n[0] == key:
-				return n[1]
+		if key in self.__nodes:
+			return self.__nodes[key]
 		raise LookupError("No node called {0} found!".format(key))
+
+	def add_node(self, key, node):
+		if key in self.__nodes:
+			if list == type(self.__nodes[key]):
+				self.__nodes[key].append(node)
+			else:
+				oldnode = self.__nodes[key]
+				self.__nodes[key] = list()
+				self.__nodes[key].append(oldnode)
+				self.__nodes[key].append(node)
+		else:
+			self.__nodes[key] = node
 
 	def has_value(self, key):
 		return key in self.__values
