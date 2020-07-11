@@ -1,7 +1,7 @@
 #    This file is part of KSP Tools
 #    © 2020 LisiasT
 #
-#    KSP ToolsL is licensed as follows:
+#    KSP Tools is licensed as follows:
 #
 #        * GPL 2.0 : https://www.gnu.org/licenses/gpl-2.0.txt
 #
@@ -17,7 +17,7 @@ Created on Jul 8, 2020
 
 @author: lisias, taniwha
 
-Based from https://github.com/taniwha/io_object_mu/blob/master/cfgnode/script.py
+Based on the source https://github.com/taniwha/io_object_mu/blob/master/cfgnode/script.py
 
 '''
 

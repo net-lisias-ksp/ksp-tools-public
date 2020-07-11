@@ -4,7 +4,7 @@
 #    This file is part of KSP Tools
 #    © 2020 LisiasT
 #
-#    KSP ToolsL is licensed as follows:
+#    KSP Tools is licensed as follows:
 #
 #        * GPL 2.0 : https://www.gnu.org/licenses/gpl-2.0.txt
 #
