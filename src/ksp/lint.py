@@ -95,27 +95,18 @@ def main(argv=None):
 	try:
 		# setup option parser
 		parser = OptionParser(version=program_version_string, epilog=program_longdesc, description=program_license)
-		parser.add_option("-i", "--in", dest="infile", help="set input path [default: %default]", metavar="FILE")
-		parser.add_option("-o", "--out", dest="outfile", help="set output path [default: %default]", metavar="FILE")
-		parser.add_option("-v", "--verbose", dest="verbose", action="count", help="set verbosity level [default: %default]")
+		parser.add_option("-v", "--verbose", dest="verbose", action="count", default=0, help="set verbosity level [default: %default]")
 
 		parser.add_option("--author", dest="author")
 		parser.add_option("--source-dir", dest="source_dir")
 		parser.add_option("--addon-title", dest="addon_title")
 		parser.add_option("--addon-version", dest="addon_version")
 
-		# set defaults
-		parser.set_defaults(outfile="./out.txt", infile="./in.txt", verbose = 0)
-
 		# process options
 		(opts, args) = parser.parse_args(argv)
 
 		if opts.verbose > 0:
 			print("verbosity level = %d" % opts.verbose)
-		if opts.infile:
-			print("infile = %s" % opts.infile)
-		if opts.outfile:
-			print("outfile = %s" % opts.outfile)
 		if args[0]:
 			args[0] = os.path.abspath(os.path.expanduser(args[0]))
 
