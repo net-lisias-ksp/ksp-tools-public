@@ -170,9 +170,9 @@ class ConfigNode:
 			l = node[1] if list == type(node[1]) else [node[1]]
 			for i in l:
 				ntext = i.to_string(level + 1)
-				text.append("%s%s %s\n" % ("    " * (level + 1), node[0], ntext))
+				text.append("\n%s%s %s\n" % ("    " * (level + 1), node[0], ntext))
 		if level >= 0:
-			text.append("%s}\n" % ("    " * (level)))
+			text.append("%s}" % ("    " * (level)))
 		return "".join(text)
 
 	def __repr__(self):
