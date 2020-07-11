@@ -71,7 +71,12 @@ def do_a_dir(opts, current_dir:str) -> list:
 def do_it(opts, args):
 	work_dir = args[0]
 
-	do_a_dir(opts, work_dir)
+	r = do_a_dir(opts, work_dir)
+
+	if opts.pretty_print:
+		for rr in r:
+			print(repr(rr))
+			print("---")
 
 def main(argv=None):
 	'''Command line options.'''
@@ -101,6 +106,7 @@ def main(argv=None):
 		parser.add_option("--source-dir", dest="source_dir")
 		parser.add_option("--addon-title", dest="addon_title")
 		parser.add_option("--addon-version", dest="addon_version")
+		parser.add_option("--pretty-print", dest="pretty_print", action="store_true", default=False, help="pretty print all the nodes on the console [default: %default]")
 
 		# process options
 		(opts, args) = parser.parse_args(argv)
