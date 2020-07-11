@@ -1,6 +1,6 @@
 # KSP Tools
 
-Tools for KSP
+Tools for KSP development
 
 ## In a Hurry
 
@@ -31,8 +31,8 @@ Example:
 ## Installation
 
 1. Checkout the thing.
-2. Have Python 3.6 (don't tested it on older ones) on the path.
-3. Have fun!
+2. Have Python 3.6 (didn't tested it on older ones) on the path.
+3. Profit!
 
 ### License
 
@@ -41,7 +41,7 @@ Example:
 		+ You are free to:
 			- Use : unpack and use the material in any computer or device
 			- Redistribute : redistribute the original package in any medium
-			- Adapt : Reuse, modify or incorporate source code into your works (and redistribute it!) 
+			- Adapt : Reuse, modify or incorporate source code into your works (and redistribute it!)
 		+ Under the following terms:
 			- You retain any copyright notices
 			- You recognize and respect any trademarks
@@ -55,4 +55,11 @@ See [NOTICE](./NOTICE) for further copyright and trademarks notices.
 
 ## References
 
-WiP.
+* Has code from [taniwha](https://github.com/taniwha)'s `io_object_mu`.
+	+ [github](https://github.com/taniwha/io_object_mu)
+* Intended to be used for [Kerbal Space Program](https://en.wikipedia.org/wiki/Kerbal_Space_Program).
+	+ [KSP Store](https://www.kerbalspaceprogram.com/store/)
+	+ [Steam](https://store.steampowered.com/app/220200/Kerbal_Space_Program/)
+	+ [GoG](https://www.gog.com/game/kerbal_space_program)
+	+ [PSN](https://store.playstation.com/pt-br/product/UP1126-CUSA08199_00-KERBAL0EE0000000)
+	+ [XBox Live](https://www.microsoft.com/en-us/p/kerbal-space-program-enhanced-edition/brbd7bdk271p?activetab=pivot:overviewtab)
