@@ -14,11 +14,7 @@ Tools for KSP development
 
 Provides a series of tools to help on KSP modding and development.
 
-Current tools:
-
-* lint v 0.1
-
-### lint
+### lint v 0.2
 
 Reads every `.cfg` file found on the directory specified, printing any detected error on the process.
 

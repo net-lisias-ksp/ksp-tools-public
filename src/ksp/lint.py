@@ -31,9 +31,9 @@ from optparse import OptionParser
 from ksp.config_node.cfgnode import ConfigNode
 
 __all__ = []
-__version__ = 0.1
+__version__ = 0.2
 __date__ = '2020-08-09'
-__updated__ = '2020-08-09'
+__updated__ = '2020-08-11'
 
 DEBUG = 1
 TESTRUN = 0
