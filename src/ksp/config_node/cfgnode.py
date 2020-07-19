@@ -81,8 +81,8 @@ class ConfigNode:
 					node.add_node(key, new_node)
 					break
 				else:
-					#cfg_error(parser, "unexpected " + parser.token)
 					key = parser.text[token_start:token_end]
+					raise ConfigNodeError(parser, "unexpected " + parser.token)
 		if not top:
 			raise ConfigNodeError(parser, "unexpected end of file")
 
