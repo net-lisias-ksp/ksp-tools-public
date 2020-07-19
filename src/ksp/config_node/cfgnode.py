@@ -103,6 +103,8 @@ class ConfigNode:
 				return nodes
 		except ParserError as e:
 			raise ConfigNodeError(parser, e.message)
+		except ConfigNodeError as e:
+			raise e
 
 	@classmethod
 	def load_file(cls, path:str, localization:dict=dict()):
