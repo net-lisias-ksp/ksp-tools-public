@@ -58,10 +58,6 @@ class Parser:
 				self.pos += 1
 			if self.pos == len(self.text):
 				return False
-			if self.text[self.pos] in ["\x1a", "\x04"]:
-				# end of file characters
-				self.pos += 1
-				continue
 			if self.text[self.pos:self.pos + 2] == "//":
 				while (self.pos < len(self.text)
 					and self.text[self.pos] != "\n"):
