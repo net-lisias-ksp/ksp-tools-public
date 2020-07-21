@@ -33,7 +33,7 @@ from ksp.config_node.cfgnode import ConfigNode
 __all__ = []
 __version__ = 0.2
 __date__ = '2020-08-09'
-__updated__ = '2020-08-11'
+__updated__ = '2020-08-20'
 
 DEBUG = 1
 TESTRUN = 0
@@ -42,6 +42,17 @@ PROFILE = 0
 
 __total = 0
 __errcount = 0
+
+
+# Ignoring errors due MM patches not being supported
+__IGNORELIST = list()
+__IGNORELIST.append("unexpected ^")
+__IGNORELIST.append("unexpected *")
+__IGNORELIST.append("unexpected /")
+__IGNORELIST.append("unexpected +")
+__IGNORELIST.append("unexpected -")
+__IGNORELIST.append("unexpected !")
+
 
 def do_a_file(opts, file):
 	global __total, __errcount
@@ -52,10 +63,13 @@ def do_a_file(opts, file):
 		if opts.verbose > 0: print(file)
 		return node
 	except Exception as e:
-		__errcount += 1
-		print(file, e, file=sys.stderr)
-		if opts.open_flagged_files:
-			os.system("open \"{:s}\"".format(file))
+		if any([ s in str(e) for s in __IGNORELIST ]) :
+			print(file, "is being ignored because it's probably has a MM patch and I don't now how to handle it.")
+		else:
+			__errcount += 1
+			print(file, e, file=sys.stderr)
+			if opts.open_flagged_files:
+				os.system("open \"{:s}\"".format(file))
 
 
 def do_a_dir(opts, current_dir:str) -> list:
