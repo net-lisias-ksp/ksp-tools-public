@@ -28,7 +28,8 @@ Example:
 
 1. Checkout the thing.
 2. Have Python 3.6 (didn't tested it on older ones) on the path.
-3. Profit!
+3. `pip install chardet`
+4. Profit!
 
 ### License
 

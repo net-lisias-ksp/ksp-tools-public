@@ -20,6 +20,7 @@ Created on Jul 8, 2020
 Based on the source https://github.com/taniwha/io_object_mu/blob/master/cfgnode/cfgnode.py
 '''
 
+import chardet
 from ksp.config_node.parser import Parser, ParserError
 
 class ConfigNodeError(ParserError):
@@ -108,7 +109,9 @@ class ConfigNode:
 
 	@classmethod
 	def load_file(cls, path:str, localization:dict=dict()):
-		_text = open(path, "r", encoding='utf-8-sig').read()
+		_raw = open(path, "rb").read()
+		_code = chardet.detect(_raw)
+		_text = str(_raw, encoding=_code['encoding'])
 		return cls.load(_text, path, localization)
 
 	@property
