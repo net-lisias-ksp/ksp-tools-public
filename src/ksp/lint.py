@@ -47,13 +47,13 @@ def do_a_file(opts, file):
 	global __total, __errcount
 	if not file.endswith(".cfg"): return None
 	try:
+		__total += 1
 		node = ConfigNode.load_file(file)
 		if opts.verbose > 0: print(file)
-		__total += 1
 		return node
 	except Exception as e:
 		__errcount += 1
-		print(e, file=sys.stderr)
+		print(file, e, file=sys.stderr)
 
 
 def do_a_dir(opts, current_dir:str) -> list:
