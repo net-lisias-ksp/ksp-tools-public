@@ -54,6 +54,8 @@ def do_a_file(opts, file):
 	except Exception as e:
 		__errcount += 1
 		print(file, e, file=sys.stderr)
+		if opts.open_flagged_files:
+			os.system("open \"{:s}\"".format(file))
 
 
 def do_a_dir(opts, current_dir:str) -> list:
@@ -107,6 +109,8 @@ def main(argv=None):
 		parser.add_option("--addon-title", dest="addon_title")
 		parser.add_option("--addon-version", dest="addon_version")
 		parser.add_option("--pretty-print", dest="pretty_print", action="store_true", default=False, help="pretty print all the nodes on the console [default: %default]")
+		parser.add_option("--open-flagged-files", dest="open_flagged_files", action="store_true", default=False, help="open the flagged files using the `open` command [default: %default]")
+
 
 		# process options
 		(opts, args) = parser.parse_args(argv)
