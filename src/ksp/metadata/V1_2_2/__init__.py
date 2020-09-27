@@ -13,9 +13,14 @@
 #    along with KSP Tools, if not see <https://www.gnu.org/licenses/>.
 #
 
+from datetime import datetime
+
 import ksp.metadata.V1_2_2.Stock as Stock
 import ksp.metadata.V1_2_2.MakingHistory as MH
 import ksp.metadata.V1_2_2.Serenity as Serenity
 
 ALL_MODULES = Stock.MODULES | MH.MODULES | Serenity.MODULES
 
+RELEASE_DATETIME=datetime(2016, 12, 6, 0, 0)
+UNITY_VERSION=5
+CSHARP_VERSION=3.5
