@@ -19,5 +19,15 @@ Created on Sep 26, 2020
 '''
 
 MODULES = set([
+	"ModuleGroundCommsPart",
+	"ModuleGroundExpControl",
+	"ModuleGroundExperiment",
+	"ModuleGroundSciencePart",
+	"ModuleRobotArmScanner",
+	"ModuleRoboticController",
+	"ModuleRoboticRotationServo",
+	"ModuleRoboticServoHinge",
+	"ModuleRoboticServoPiston",
+	"ModuleRoboticServoRotor",
 ])
 

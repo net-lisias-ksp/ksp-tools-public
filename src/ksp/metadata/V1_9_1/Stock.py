@@ -59,7 +59,7 @@ MODULES = set([
 	"ModuleDeployableSolarPanel",
 	"ModuleDockingNode",
 	"ModuleDragModifier",
-	"ModuleDynamicNodes",
+	"ModuleDynamicNodes",          # Not used by Stock, but by MH & Serenity
 	"ModuleEngines",
 	"ModuleEnginesFX",
 	"ModuleEnviroSensor",
