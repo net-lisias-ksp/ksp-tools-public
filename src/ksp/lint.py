@@ -33,7 +33,7 @@ from ksp.config_node.cfgnode import ConfigNode
 __all__ = []
 __version__ = 0.2
 __date__ = '2020-08-09'
-__updated__ = '2020-08-20'
+__updated__ = '2020-09-27'
 
 DEBUG = 1
 TESTRUN = 0
@@ -52,6 +52,7 @@ __IGNORELIST.append("unexpected /")
 __IGNORELIST.append("unexpected +")
 __IGNORELIST.append("unexpected -")
 __IGNORELIST.append("unexpected !")
+__IGNORELIST.append("unexpected %")
 
 
 def do_a_file(opts, file):
@@ -156,7 +157,7 @@ if "__main__" == __name__:
 	if PROFILE:
 		import cProfile
 		import pstats
-		profile_filename = 'crawler_profile.txt'
+		profile_filename = 'lint_profile.txt'
 		cProfile.run('main()', profile_filename)
 		statsfile = open("profile_stats.txt", "wb")
 		p = pstats.Stats(profile_filename, stream=statsfile)

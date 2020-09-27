@@ -111,7 +111,12 @@ class ConfigNode:
 	def load_file(cls, path:str, localization:dict=dict()):
 		_raw = open(path, "rb").read()
 		_code = chardet.detect(_raw)
-		_text = str(_raw, encoding=_code['encoding'])
+		try:
+			_text = str(_raw, encoding=_code['encoding'])
+		except:
+			print("Err on decoding using {0}".format(_code))
+			print("Trying UTF-8, and God helps us...")
+			_text = str(_raw, encoding="utf-8", errors='ignore')
 		return cls.load(_text, path, localization)
 
 	@property
