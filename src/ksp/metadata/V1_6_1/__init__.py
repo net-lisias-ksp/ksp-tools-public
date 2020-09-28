@@ -21,6 +21,7 @@ import ksp.metadata.V1_6_1.Serenity as Serenity
 
 ALL_MODULES = Stock.MODULES | MH.MODULES | Serenity.MODULES
 ALL_PARTS = Stock.PARTS | MH.PARTS | Serenity.PARTS
+ALL_DEPRECATED_PARTS = Stock.DEPRECATED_PARTS | MH.DEPRECATED_PARTS | Serenity.DEPRECATED_PARTS
 
 FREE=False
 SOURCE='Steam'

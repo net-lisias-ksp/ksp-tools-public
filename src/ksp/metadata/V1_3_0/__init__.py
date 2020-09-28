@@ -21,6 +21,7 @@ import ksp.metadata.V1_3_0.Serenity as Serenity
 
 ALL_MODULES = Stock.MODULES | MH.MODULES | Serenity.MODULES
 ALL_PARTS = Stock.PARTS | MH.PARTS | Serenity.PARTS
+ALL_DEPRECATED_PARTS = Stock.DEPRECATED_PARTS | MH.DEPRECATED_PARTS | Serenity.DEPRECATED_PARTS
 
 # First release after TTI acquired KSP.
 FREE=False

@@ -198,4 +198,5 @@ PARTS_BY_CATEGORY = {
 
 from ksp.metadata import sum_all_parts
 PARTS = sum_all_parts(PARTS_BY_CATEGORY)
+DEPRECATED_PARTS = set(PARTS_BY_CATEGORY['*DEPRECATED*']) if '*DEPRECATED*' in PARTS_BY_CATEGORY else set()
 
