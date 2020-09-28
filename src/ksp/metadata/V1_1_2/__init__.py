@@ -13,7 +13,7 @@
 #    along with KSP Tools, if not see <https://www.gnu.org/licenses/>.
 #
 
-from datetime import datetime
+from datetime import date
 
 import ksp.metadata.V1_1_2.Stock as Stock
 import ksp.metadata.V1_1_2.MakingHistory as MH
@@ -23,6 +23,6 @@ ALL_MODULES = Stock.MODULES | MH.MODULES | Serenity.MODULES
 ALL_PARTS = Stock.PARTS | MH.PARTS | Serenity.PARTS
 
 # Last release before HarvesteR (Felipe Falanghe) quits
-RELEASE_DATETIME=datetime(2016, 4, 30, 0, 0)
+RELEASE_DATE=date(2016, 4, 30)
 UNITY_VERSION=5
 CSHARP_VERSION=3.5
