@@ -153,6 +153,6 @@ PARTS_BY_CATEGORY = {
 	]),
 }
 
-from itertools import chain
-PARTS = set(chain.from_iterable(PARTS_BY_CATEGORY.values()))
+from ksp.metadata import sum_all_parts
+PARTS = sum_all_parts(PARTS_BY_CATEGORY)
 

@@ -191,3 +191,7 @@ def get(key):
 		return ksp.metadata.V0_22
 
 	raise ModuleNotFoundError(key)
+
+from itertools import chain
+def sum_all_parts(part_collection:dict):
+	return set(chain.from_iterable([ part_collection[p] for p in part_collection.keys() if not p.startswith('*') ]))
