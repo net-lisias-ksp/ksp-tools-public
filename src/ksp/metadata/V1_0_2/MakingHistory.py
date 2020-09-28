@@ -21,5 +21,9 @@ Created on Sep 26, 2020
 MODULES = set([
 ])
 
-PARTS = set([
-])
+PARTS_BY_CATEGORY = {
+}
+
+from itertools import chain
+PARTS = set(chain.from_iterable(PARTS_BY_CATEGORY.values()))
+

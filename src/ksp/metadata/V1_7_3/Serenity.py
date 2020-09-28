@@ -32,11 +32,29 @@ MODULES = set([
 	"ModuleRoboticServoRotor",
 ])
 
-PARTS = set([
-	'DeployedCentralStation', 'DeployedGoExOb', 'DeployedIONExp', 'DeployedRTG', 'DeployedSatDish', 'DeployedSeismicSensor', 'DeployedSolarPanel', 'DeployedWeatherStn', 'RobotArmScanner_S1', 'RobotArmScanner_S2'
-	'RobotArmScanner_S3', 'RotorEngine_02', 'RotorEngine_03', 'cargoContainer', 'controller1000', 'hinge_01', 'hinge_01_s', 'hinge_03', 'hinge_03_s', 'hinge_04'
-	'kerbalEVA', 'kerbalEVAFuture', 'kerbalEVAVintage', 'kerbalEVAfemale', 'kerbalEVAfemaleFuture', 'kerbalEVAfemaleVintage', 'lGripPad', 'lGripStrip', 'largeHeliBlade', 'largePropeller'
-	'mGripPad', 'mediumHeliBlade', 'mediumPropeller', 'noseconeTiny', 'noseconeVS', 'piston_01', 'piston_02', 'piston_03', 'piston_04', 'rotoServo_00'
-	'rotoServo_02', 'rotoServo_03', 'rotoServo_04', 'rotor_01', 'rotor_01s', 'rotor_02', 'rotor_02s', 'rotor_03', 'rotor_03s', 'sGripPad'
-	'sGripStrip', 'smallCargoContainer', 'smallHeliBlade', 'smallPropeller'
-])
+PARTS_BY_CATEGORY = {
+	'*UNSORTED*': set([
+		'kerbalEVA', 'kerbalEVAFuture', 'kerbalEVAVintage', 'kerbalEVAfemale', 'kerbalEVAfemaleFuture', 'kerbalEVAfemaleVintage'
+	]),
+	'Aero': set([
+		'largeHeliBlade', 'largePropeller', 'mediumHeliBlade', 'mediumPropeller', 'noseconeTiny', 'noseconeVS', 'smallHeliBlade', 'smallPropeller'
+	]),
+	'Cargo': set([
+		'DeployedCentralStation', 'DeployedGoExOb', 'DeployedIONExp', 'DeployedRTG', 'DeployedSatDish', 'DeployedSeismicSensor', 'DeployedSolarPanel', 'DeployedWeatherStn', 'cargoContainer', 'smallCargoContainer'
+	]),
+	'Robotics': set([
+		'RotorEngine_02', 'RotorEngine_03', 'controller1000', 'hinge_01', 'hinge_01_s', 'hinge_03', 'hinge_03_s', 'hinge_04', 'piston_01', 'piston_02'
+		'piston_03', 'piston_04', 'rotoServo_00', 'rotoServo_02', 'rotoServo_03', 'rotoServo_04', 'rotor_01', 'rotor_01s', 'rotor_02', 'rotor_02s'
+		'rotor_03', 'rotor_03s'
+	]),
+	'Science': set([
+		'RobotArmScanner_S1', 'RobotArmScanner_S2', 'RobotArmScanner_S3'
+	]),
+	'Structural': set([
+		'lGripPad', 'lGripStrip', 'mGripPad', 'sGripPad', 'sGripStrip'
+	]),
+}
+
+from itertools import chain
+PARTS = set(chain.from_iterable(PARTS_BY_CATEGORY.values()))
+

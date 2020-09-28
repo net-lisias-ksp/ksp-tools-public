@@ -46,6 +46,7 @@ class ConfigNode:
 	__CONVERTERS['PART']['bulkheadProfiles'] = lambda v : [vv.strip() for vv in v.split(",")] if str == type(v) else v
 	__CONVERTERS['PART']['TechRequired'] = lambda v : [vv.strip() for vv in v.split(",")] if str == type(v) else v
 	__CONVERTERS['PART']['tags'] = lambda v : [vv.strip() for vv in v.split(",")] if str == type(v) else v
+	__CONVERTERS['PART']['category'] = lambda v : '*DEPRECATED*' if 'none' == v else v
 
 	def __init__(self, name:str = None):
 		self.name = name

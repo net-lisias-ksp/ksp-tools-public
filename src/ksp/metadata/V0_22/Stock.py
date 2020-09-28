@@ -52,22 +52,42 @@ MODULES = set([
 	"RetractableLadder",
 ])
 
-PARTS = set([
-	'AdvancedCanard', 'CanardController', 'CircularIntake', 'GooExperiment', 'JetEngine', 'MK1Fuselage', 'Mark1-2Pod', 'Mark1Cockpit', 'Mark2Cockpit', 'Mk1FuselageStructural'
-	'R8winglet', 'RCSBlock', 'RCSFuelTank', 'RCSTank1-2', 'SmallGearBay', 'StandardCtrlSrf', 'adapterLargeSmallBi', 'adapterLargeSmallQuad', 'adapterLargeSmallTri', 'adapterSmallMiniShort'
-	'adapterSmallMiniTall', 'advSasModule', 'airScoop', 'airplaneTail', 'asasmodule1-2', 'avionicsNoseCone', 'batteryBank', 'batteryBankLarge', 'batteryBankMini', 'batteryPack'
-	'commDish', 'crewCabin', 'cupola', 'decoupler1-2', 'deltaWing', 'dockingPort1', 'dockingPort2', 'dockingPort3', 'dockingPortLarge', 'dockingPortLateral'
-	'engineLargeSkipper', 'fuelLine', 'fuelTank', 'fuelTank1-2', 'fuelTank2-2', 'fuelTank3-2', 'fuelTank4-2', 'fuelTankSmall', 'fuelTankSmallFlat', 'fuelTank_long'
-	'ionEngine', 'ksp_r_largeBatteryPack', 'ladder1', 'landerCabinSmall', 'landingLeg1', 'landingLeg1-2', 'largeAdapter', 'largeAdapter2', 'largeSolarPanel', 'launchClamp1'
-	'linearRcs', 'liquidEngine', 'liquidEngine1-2', 'liquidEngine2', 'liquidEngine2-2', 'liquidEngine3', 'liquidEngineMini', 'longAntenna', 'mark3Cockpit', 'mediumDishAntenna'
-	'microEngine', 'miniFuelTank', 'miniLandingLeg', 'mk1pod', 'mk2Fuselage', 'mk2LanderCabin', 'mk2SpacePlaneAdapter', 'mk3Fuselage', 'mk3spacePlaneAdapter', 'nacelleBody'
-	'noseCone', 'noseConeAdapter', 'nuclearEngine', 'parachuteDrogue', 'parachuteLarge', 'parachuteRadial', 'parachuteSingle', 'probeCoreCube', 'probeCoreHex', 'probeCoreOcto'
-	'probeCoreOcto2', 'probeCoreSphere', 'probeStackLarge', 'probeStackSmall', 'radialDecoupler', 'radialDecoupler1-2', 'radialDecoupler2', 'radialEngineBody', 'radialEngineMini', 'radialLiquidEngine1-2'
-	'radialRCSTank', 'ramAirIntake', 'rcsTankMini', 'rcsTankRadialLong', 'rocketNoseCone', 'roverBody', 'roverWheel1', 'roverWheel2', 'roverWheel3', 'rtg'
-	'sasModule', 'science_module', 'seatExternalCmd', 'sensorAccelerometer', 'sensorBarometer', 'sensorGravimeter', 'sensorThermometer', 'sepMotor1', 'smallCtrlSrf', 'smallHardpoint'
-	'smallRadialEngine', 'solarPanels1', 'solarPanels2', 'solarPanels3', 'solarPanels4', 'solarPanels5', 'solidBooster', 'solidBooster1-1', 'spotLight1', 'spotLight2'
-	'stackBiCoupler', 'stackDecoupler', 'stackDecouplerMini', 'stackPoint1', 'stackQuadCoupler', 'stackSeparator', 'stackSeparatorBig', 'stackSeparatorMini', 'stackTriCoupler', 'standardNoseCone'
-	'stationHub', 'structuralIBeam1', 'structuralIBeam2', 'structuralIBeam3', 'structuralMiniNode', 'structuralPanel1', 'structuralPanel2', 'structuralPylon', 'structuralWing', 'strutConnector'
-	'strutCube', 'strutOcto', 'sweptWing', 'tailfin', 'telescopicLadder', 'telescopicLadderBay', 'toroidalAerospike', 'toroidalFuelTank', 'trussAdapter', 'trussPiece1x'
-	'trussPiece3x', 'turboFanEngine', 'wheelMed', 'wingConnector', 'winglet', 'winglet3', 'xenonTank', 'xenonTankRadial'
-])
+PARTS_BY_CATEGORY = {
+	'Aero': set([
+		'AdvancedCanard', 'CanardController', 'CircularIntake', 'R8winglet', 'StandardCtrlSrf', 'airScoop', 'airplaneTail', 'deltaWing', 'nacelleBody', 'noseCone'
+		'radialEngineBody', 'ramAirIntake', 'rocketNoseCone', 'smallCtrlSrf', 'standardNoseCone', 'structuralWing', 'sweptWing', 'tailfin', 'wingConnector', 'winglet'
+		'winglet3'
+	]),
+	'Control': set([
+		'RCSBlock', 'advSasModule', 'asasmodule1-2', 'linearRcs', 'sasModule'
+	]),
+	'Pods': set([
+		'Mark1-2Pod', 'Mark1Cockpit', 'Mark2Cockpit', 'cupola', 'landerCabinSmall', 'mark3Cockpit', 'mk1pod', 'mk2LanderCabin', 'probeCoreCube', 'probeCoreHex'
+		'probeCoreOcto', 'probeCoreOcto2', 'probeCoreSphere', 'probeStackLarge', 'probeStackSmall', 'seatExternalCmd'
+	]),
+	'Propulsion': set([
+		'JetEngine', 'MK1Fuselage', 'RCSFuelTank', 'RCSTank1-2', 'engineLargeSkipper', 'fuelLine', 'fuelTank', 'fuelTank1-2', 'fuelTank2-2', 'fuelTank3-2'
+		'fuelTank4-2', 'fuelTankSmall', 'fuelTankSmallFlat', 'fuelTank_long', 'liquidEngine', 'liquidEngine1-2', 'liquidEngine2', 'liquidEngine2-2', 'liquidEngine3', 'liquidEngineMini'
+		'microEngine', 'miniFuelTank', 'mk2Fuselage', 'mk2SpacePlaneAdapter', 'mk3Fuselage', 'mk3spacePlaneAdapter', 'nuclearEngine', 'radialEngineMini', 'radialLiquidEngine1-2', 'radialRCSTank'
+		'rcsTankMini', 'rcsTankRadialLong', 'sepMotor1', 'smallRadialEngine', 'solidBooster', 'solidBooster1-1', 'toroidalAerospike', 'toroidalFuelTank', 'turboFanEngine'
+	]),
+	'Science': set([
+		'GooExperiment', 'avionicsNoseCone', 'commDish', 'longAntenna', 'mediumDishAntenna', 'science_module', 'sensorAccelerometer', 'sensorBarometer', 'sensorGravimeter', 'sensorThermometer'
+	]),
+	'Structural': set([
+		'Mk1FuselageStructural', 'adapterLargeSmallBi', 'adapterLargeSmallQuad', 'adapterLargeSmallTri', 'adapterSmallMiniShort', 'adapterSmallMiniTall', 'decoupler1-2', 'largeAdapter', 'largeAdapter2', 'launchClamp1'
+		'noseConeAdapter', 'radialDecoupler', 'radialDecoupler1-2', 'radialDecoupler2', 'roverBody', 'smallHardpoint', 'stackBiCoupler', 'stackDecoupler', 'stackDecouplerMini', 'stackPoint1'
+		'stackQuadCoupler', 'stackSeparator', 'stackSeparatorBig', 'stackSeparatorMini', 'stackTriCoupler', 'stationHub', 'structuralIBeam1', 'structuralIBeam2', 'structuralIBeam3', 'structuralMiniNode'
+		'structuralPanel1', 'structuralPanel2', 'structuralPylon', 'strutConnector', 'strutCube', 'strutOcto', 'trussAdapter', 'trussPiece1x', 'trussPiece3x'
+	]),
+	'Utility': set([
+		'SmallGearBay', 'batteryBank', 'batteryBankLarge', 'batteryBankMini', 'batteryPack', 'crewCabin', 'dockingPort1', 'dockingPort2', 'dockingPort3', 'dockingPortLarge'
+		'dockingPortLateral', 'ionEngine', 'ksp_r_largeBatteryPack', 'ladder1', 'landingLeg1', 'landingLeg1-2', 'largeSolarPanel', 'miniLandingLeg', 'parachuteDrogue', 'parachuteLarge'
+		'parachuteRadial', 'parachuteSingle', 'roverWheel1', 'roverWheel2', 'roverWheel3', 'rtg', 'solarPanels1', 'solarPanels2', 'solarPanels3', 'solarPanels4'
+		'solarPanels5', 'spotLight1', 'spotLight2', 'telescopicLadder', 'telescopicLadderBay', 'wheelMed', 'xenonTank', 'xenonTankRadial'
+	]),
+}
+
+from itertools import chain
+PARTS = set(chain.from_iterable(PARTS_BY_CATEGORY.values()))
+
