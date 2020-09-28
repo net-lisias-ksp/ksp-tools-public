@@ -59,3 +59,5 @@ MODULES = set([
 	"RetractableLadder",
 ])
 
+PARTS = set([
+])

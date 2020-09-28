@@ -20,6 +20,7 @@ import ksp.metadata.V1_1_3.MakingHistory as MH
 import ksp.metadata.V1_1_3.Serenity as Serenity
 
 ALL_MODULES = Stock.MODULES | MH.MODULES | Serenity.MODULES
+ALL_PARTS = Stock.PARTS | MH.PARTS | Serenity.PARTS
 
 # First release after HarvesteR (Felipe Falanghe) had leaved
 RELEASE_DATETIME=datetime(2016, 6, 21, 0, 0)

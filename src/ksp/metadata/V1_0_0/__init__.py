@@ -20,6 +20,7 @@ import ksp.metadata.V1_0_0.MakingHistory as MH
 import ksp.metadata.V1_0_0.Serenity as Serenity
 
 ALL_MODULES = Stock.MODULES | MH.MODULES | Serenity.MODULES
+ALL_PARTS = Stock.PARTS | MH.PARTS | Serenity.PARTS
 
 RELEASE_DATETIME=datetime(2015, 4, 27, 0, 0)
 UNITY_VERSION=4

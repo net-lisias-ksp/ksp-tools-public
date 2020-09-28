@@ -31,3 +31,9 @@ MODULES = set([
 	"ModuleRoboticServoRotor",
 ])
 
+PARTS = set([
+	'DeployedCentralStation', 'DeployedGoExOb', 'DeployedIONExp', 'DeployedRTG', 'DeployedSatDish', 'DeployedSeismicSensor', 'DeployedSolarPanel', 'DeployedWeatherStn', 'RobotArmScanner_S1', 'RobotArmScanner_S2'
+	'RobotArmScanner_S3', 'cargoContainer', 'controller1000', 'hinge_01', 'hinge_01_s', 'hinge_03', 'hinge_03_s', 'hinge_04', 'kerbalEVA', 'kerbalEVAFuture'
+	'kerbalEVAVintage', 'kerbalEVAfemale', 'kerbalEVAfemaleFuture', 'kerbalEVAfemaleVintage', 'piston_01', 'piston_02', 'piston_03', 'piston_04', 'rotoServo_00', 'rotoServo_02'
+	'rotoServo_03', 'rotoServo_04', 'rotor_01', 'rotor_02', 'rotor_03', 'smallCargoContainer'
+])
