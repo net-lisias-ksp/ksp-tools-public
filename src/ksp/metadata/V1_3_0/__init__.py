@@ -23,6 +23,8 @@ ALL_MODULES = Stock.MODULES | MH.MODULES | Serenity.MODULES
 ALL_PARTS = Stock.PARTS | MH.PARTS | Serenity.PARTS
 
 # First release after TTI acquired KSP.
+FREE=False
+SOURCE='Steam'
 RELEASE_DATE=date(2017, 5, 25)
 UNITY_VERSION=5
 CSHARP_VERSION=3.5

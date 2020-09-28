@@ -23,6 +23,8 @@ ALL_MODULES = Stock.MODULES | MH.MODULES | Serenity.MODULES
 ALL_PARTS = Stock.PARTS | MH.PARTS | Serenity.PARTS
 
 # Last release before HarvesteR (Felipe Falanghe) quits
+FREE=False
+SOURCE='Steam'
 RELEASE_DATE=date(2016, 4, 30)
 UNITY_VERSION=5
 CSHARP_VERSION=3.5

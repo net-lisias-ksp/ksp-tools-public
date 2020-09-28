@@ -23,6 +23,8 @@ ALL_MODULES = Stock.MODULES | MH.MODULES | Serenity.MODULES
 ALL_PARTS = Stock.PARTS | MH.PARTS | Serenity.PARTS
 
 # Last release before KSP2 kick off?
+FREE=False
+SOURCE='Steam'
 RELEASE_DATE=date(2017, 10, 5)
 UNITY_VERSION=5
 CSHARP_VERSION=3.5

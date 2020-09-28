@@ -23,6 +23,8 @@ ALL_MODULES = Stock.MODULES | MH.MODULES | Serenity.MODULES
 ALL_PARTS = Stock.PARTS | MH.PARTS | Serenity.PARTS
 
 # First release after HarvesteR (Felipe Falanghe) had leaved
+FREE=False
+SOURCE='Steam'
 RELEASE_DATE=date(2016, 6, 21)
 UNITY_VERSION=5
 CSHARP_VERSION=3.5

@@ -22,6 +22,8 @@ import ksp.metadata.V1_0_4.Serenity as Serenity
 ALL_MODULES = Stock.MODULES | MH.MODULES | Serenity.MODULES
 ALL_PARTS = Stock.PARTS | MH.PARTS | Serenity.PARTS
 
+FREE=False
+SOURCE='Steam'
 RELEASE_DATE=date(2015, 6, 23)
 UNITY_VERSION=4
 CSHARP_VERSION=3.5
