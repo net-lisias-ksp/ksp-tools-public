@@ -59,6 +59,12 @@ ALL_VERSIONS = set([
 	'0.22',
 ])
 
+def __version_sorting(x):
+	r = int(x.replace(".",""))
+	r = r / 10 if x.startswith("0") and x.count(".") > 1 else r
+	return r
+ALL_VERSIONS_SORTED = sorted(ALL_VERSIONS, key=__version_sorting)
+
 def get(key):
 	if "1.10.1" == key:
 		import ksp.metadata.V1_10_1

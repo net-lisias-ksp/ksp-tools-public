@@ -14,11 +14,7 @@ if __name__ == '__main__':
 		'', '', '', '', '', '', '', ''
 		))
 
-	def s(x):
-		r = int(x.replace(".",""))
-		r = r / 10 if x.startswith("0") and x.count(".") > 1 else r
-		return r
-	for kspv in sorted(ksp.metadata.ALL_VERSIONS, key=s):
+	for kspv in ksp.metadata.ALL_VERSIONS_SORTED:
 		m = ksp.metadata.get(kspv)
 		print("{: >12s}|{: ^16s}|{: >12d}|{: >12d}|{: >16d}|{: >10d}|{: >8d}|{: >12d}".format(
 				kspv,
